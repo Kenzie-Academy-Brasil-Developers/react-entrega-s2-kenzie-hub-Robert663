@@ -1,0 +1,9 @@
+.statuses {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statuses:hover {
+  background-color: #343b41;
+  cursor: pointer;
+}

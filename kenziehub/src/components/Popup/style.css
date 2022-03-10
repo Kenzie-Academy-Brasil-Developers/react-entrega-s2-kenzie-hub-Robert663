@@ -1,0 +1,44 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+.titleInput {
+  height: 40px;
+  width: 100%;
+  background-color: #343b41;
+  color: #f8f9fa;
+  margin-bottom: 30px;
+}
+.statusInput {
+  height: 40px;
+  width: 100%;
+  background-color: #343b41;
+  color: #f8f9fa;
+}
+.box {
+  position: absolute;
+  width: 65%;
+  left: 20%;
+  height: auto;
+  background: #212529;
+  border-radius: 4px;
+  padding: 20px;
+  overflow: auto;
+}
+
+.x {
+  content: "x";
+  cursor: pointer;
+  position: absolute;
+  left: 92%;
+  top: 5%;
+  background: #868e96;
+  color: #f8f9fa;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  /* border: 1px solid #F8F9FA; */
+  font-size: 20px;
+}

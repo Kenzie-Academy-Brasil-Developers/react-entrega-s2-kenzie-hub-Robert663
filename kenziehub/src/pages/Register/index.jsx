@@ -1,23 +1,17 @@
 import {InputLabel, FormControl,MenuItem, Box, Container, CssBaseline, Select, Button, Typography, TextField} from '@mui/material';
 import {useState} from 'react';
-// import {ThemeProvider} from '@mui/material/styles';
+import api from '../../services/api'
 import {Link, useHistory} from 'react-router-dom'
 import * as yup from 'yup';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-import axios from 'axios';
 
 const Register = () => {
     const history = useHistory();
     const [course_module, setcourse_module] = useState('')
     const handleChange = (e) => {
         setcourse_module(e.target.value);
-    };
-   
-       const api = axios.create({
-           baseURL: 'https://kenziehub.herokuapp.com/',
-        })
-        
+    };     
 
     const schema = yup.object().shape({
         email: yup.string().email('Digite um email válido').required('Campo obrigatório'),
@@ -35,14 +29,12 @@ const Register = () => {
         formState: {errors},
     } = useForm ({resolver: yupResolver(schema)})
     
-    const handleCadastro = async (data) => {
-         const response = await api.post('/users/', data)
+    const handleCadastro = (data) => {
+         const response =  api.post('/users/', data)
          .catch((err ) => {
-        console.log(err);
 
         history.push('/')
     })};
-    // const handleCadastro = (data) => console.log(data)
 
     return (
     <>
